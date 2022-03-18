@@ -10,14 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuanLyGiatLa_Nhom1">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.SignInActivity"
+            android:exported="false"
+            android:parentActivityName=".Activity.LoginActivity"></activity>
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
