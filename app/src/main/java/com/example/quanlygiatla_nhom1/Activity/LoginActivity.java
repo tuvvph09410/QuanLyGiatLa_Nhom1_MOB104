@@ -58,10 +58,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initViewById() {
-        this.edUserName = findViewById(R.id.ed_userName);
-        this.edPassword = findViewById(R.id.ed_password);
-        this.edlUserName = findViewById(R.id.edl_userName);
-        this.edlPassword = findViewById(R.id.edl_password);
+        this.edUserName = findViewById(R.id.ed_userNameLogin);
+        this.edPassword = findViewById(R.id.ed_passwordLogin);
+        this.edlUserName = findViewById(R.id.edl_userNameLogin);
+        this.edlPassword = findViewById(R.id.edl_passwordLogin);
         this.cbSaveAccount = findViewById(R.id.cb_saveAccount);
         this.btnLogin = findViewById(R.id.btn_login);
         this.btnSignIn = findViewById(R.id.btn_signIn);
