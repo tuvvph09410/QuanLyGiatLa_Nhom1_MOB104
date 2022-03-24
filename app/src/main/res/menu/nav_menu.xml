@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_24_24"
+            android:title="Trang chủ"  />
+        <item
+            android:id="@+id/nav_bill"
+            android:icon="@drawable/bill_24_24"
+            android:title="Hóa đơn"  />
+        <item
+            android:id="@+id/nav_service"
+            android:icon="@drawable/service_24_24"
+            android:title="Dịch vụ" />
+        <item
+            android:id="@+id/nav_warehouse"
+            android:icon="@drawable/warehouse_24_24"
+            android:title="Kho" />
+        <item
+            android:id="@+id/nav_profit"
+            android:icon="@drawable/profit_24_24"
+            android:title="Doanh thu"  />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/person_24_24"
+            android:title="Quản lý tài khoản" />
+        <item
+            android:id="@+id/nav_personal"
+            android:icon="@drawable/person_24_24"
+            android:title="Thông tin cá nhân" />
+        <item
+            android:id="@+id/nav_change_password"
+            android:icon="@drawable/change_password_24_24"
+            android:title="Đổi mật khẩu" />
+        <item
+            android:id="@+id/nav_reset_password"
+            android:icon="@drawable/change_password_24_24"
+            android:title="Đặt lại mật khẩu" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Đăng xuất"
+            android:icon="@drawable/logout_24_24" />
+
+    </group>
+</menu>
