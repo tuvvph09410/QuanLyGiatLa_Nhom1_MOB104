@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quanlygiatla_nhom1.Class.UserClass;
 import com.example.quanlygiatla_nhom1.R;
 import com.example.quanlygiatla_nhom1.SQLite.DAO.UserDAO;
 import com.example.quanlygiatla_nhom1.Utilities.Utilities;
@@ -35,7 +37,17 @@ public class SignInActivity extends AppCompatActivity {
 
         this.init();
 
+        this.removeErrorTextOnChage();
+
         this.initClickListener();
+    }
+
+    private void removeErrorTextOnChage() {
+        this.utilities.removeErrorText(edlUserNameSignIn, edUserNameSignIn);
+        this.utilities.removeErrorText(edlNameSignIn, edNameSignIn);
+        this.utilities.removeErrorText(edlPhoneSignIn, edPhoneSignIn);
+        this.utilities.removeErrorText(edlPasswordSignIn, edPasswordSignIn);
+        this.utilities.removeErrorText(edlRePasswordSignIn, edRePasswordSignIn);
     }
 
     private Boolean validateSignin() {
@@ -86,15 +98,15 @@ public class SignInActivity extends AppCompatActivity {
             edlPasswordSignIn.setError(this.utilities.NotSpecialCharacter);
             success = false;
         }
-        if (!(edPasswordSignIn.getText().toString().length() > 4 || edPasswordSignIn.getText().toString().length() < 20)) {
+        if (edPasswordSignIn.getText().toString().length() < 4 || edPasswordSignIn.getText().toString().length() > 20) {
             edlPasswordSignIn.setError(this.utilities.PasswordLength);
             success = false;
         }
-        if (edPhoneSignIn.getText().toString().equalsIgnoreCase(edRePasswordSignIn.getText().toString())) {
+        if (!edPasswordSignIn.getText().toString().equalsIgnoreCase(edRePasswordSignIn.getText().toString())) {
             edlRePasswordSignIn.setError(this.utilities.PasswordCompare);
             success = false;
         }
-        if (edPhoneSignIn.getText().toString().equalsIgnoreCase("")) {
+        if (edPasswordSignIn.getText().toString().equalsIgnoreCase("")) {
             edlPasswordSignIn.setError(this.utilities.PasswordRequire);
             success = false;
         }
@@ -123,7 +135,18 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validateSignin()) {
-
+                    String name = edNameSignIn.getText().toString();
+                    String username = edUserNameSignIn.getText().toString();
+                    String numberPhone = edPhoneSignIn.getText().toString();
+                    String password = edPasswordSignIn.getText().toString();
+                    UserClass userClass = new UserClass(name, numberPhone, username, password, "User", "Chưa xóa");
+                    if (userDAO.AddOneUser(userClass)) {
+                        Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SignInActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Đăng ký thất bại", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
