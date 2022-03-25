@@ -1,4 +1,4 @@
-package com.example.quanlygiatla_nhom1.Activity.Class;
+package com.example.quanlygiatla_nhom1.Class;
 
 public class UserClass {
     private String name;

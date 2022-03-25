@@ -61,6 +61,34 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edl_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:ems="10"
+            android:hint="Số điện thoại"
+            android:inputType="text"
+            android:textColorHint="@color/black"
+            app:endIconMode="clear_text"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edl_userNameSignIn"
+            app:placeholderTextColor="@color/black"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#D3D5D5"
+                android:inputType="number"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edl_userNameSignIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -103,7 +131,7 @@
             app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edl_userNameSignIn"
+            app:layout_constraintTop_toBottomOf="@+id/edl_phone"
             app:placeholderTextColor="@color/black"
             app:startIconDrawable="@drawable/ic_baseline_lock_24">
 

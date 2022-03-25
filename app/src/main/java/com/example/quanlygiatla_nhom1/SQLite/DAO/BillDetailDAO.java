@@ -1,4 +1,4 @@
-package com.example.quanlygiatla_nhom1.Activity.SQLite.DAO;
+package com.example.quanlygiatla_nhom1.SQLite.DAO;
 
 
 import android.annotation.SuppressLint;
@@ -7,9 +7,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.quanlygiatla_nhom1.Activity.Class.BillDetailClass;
-import com.example.quanlygiatla_nhom1.Activity.Class.ProfitClass;
-import com.example.quanlygiatla_nhom1.Activity.SQLite.SQLite;
+import com.example.quanlygiatla_nhom1.Class.BillDetailClass;
+import com.example.quanlygiatla_nhom1.Class.ProfitClass;
+import com.example.quanlygiatla_nhom1.SQLite.SQLite;
 
 import java.util.ArrayList;
 import java.util.List;

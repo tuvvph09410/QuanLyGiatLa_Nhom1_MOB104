@@ -16,9 +16,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
-import com.example.quanlygiatla_nhom1.Activity.Class.UserClass;
-import com.example.quanlygiatla_nhom1.Activity.SQLite.DAO.UserDAO;
+import com.example.quanlygiatla_nhom1.Class.UserClass;
 import com.example.quanlygiatla_nhom1.R;
+import com.example.quanlygiatla_nhom1.SQLite.DAO.UserDAO;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 

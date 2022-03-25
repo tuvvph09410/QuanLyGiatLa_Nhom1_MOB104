@@ -1,14 +1,14 @@
-package com.example.quanlygiatla_nhom1.Activity.SQLite;
+package com.example.quanlygiatla_nhom1.SQLite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.quanlygiatla_nhom1.Activity.SQLite.DAO.BillDAO;
-import com.example.quanlygiatla_nhom1.Activity.SQLite.DAO.BillDetailDAO;
-import com.example.quanlygiatla_nhom1.Activity.SQLite.DAO.ServiceDAO;
-import com.example.quanlygiatla_nhom1.Activity.SQLite.DAO.UserDAO;
-import com.example.quanlygiatla_nhom1.Activity.SQLite.DAO.WarehouseDAO;
+import com.example.quanlygiatla_nhom1.SQLite.DAO.BillDAO;
+import com.example.quanlygiatla_nhom1.SQLite.DAO.BillDetailDAO;
+import com.example.quanlygiatla_nhom1.SQLite.DAO.ServiceDAO;
+import com.example.quanlygiatla_nhom1.SQLite.DAO.UserDAO;
+import com.example.quanlygiatla_nhom1.SQLite.DAO.WarehouseDAO;
 
 public class SQLite extends SQLiteOpenHelper {
     public SQLite(Context context){
