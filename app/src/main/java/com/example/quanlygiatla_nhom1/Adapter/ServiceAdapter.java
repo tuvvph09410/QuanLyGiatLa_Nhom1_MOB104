@@ -11,10 +11,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.quanlygiatla_nhom1.Activity.MainActivity;
 import com.example.quanlygiatla_nhom1.Class.ServiceClass;
+import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceDetailFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
 import com.example.quanlygiatla_nhom1.R;
 import com.example.quanlygiatla_nhom1.SQLite.DAO.ServiceDAO;
 
@@ -25,13 +29,13 @@ public class ServiceAdapter extends BaseAdapter {
     public Context context;
     public List<ServiceClass> services;
     ServiceDAO serviceDAO;
-//    ServiceFragment serviceFragment;
+    ServiceFragment serviceFragment;
     SharedPreferences sharedPreferences;
 
-    public void ServiceApdater(Context context, List<ServiceClass> services) {
+    public ServiceAdapter(Context context, List<ServiceClass> services, ServiceFragment serviceFragment) {
         this.context =context;
         this.services = services;
-//        this.serviceFragment = serviceFragment;
+        this.serviceFragment = serviceFragment;
     }
 
     @Override
@@ -89,7 +93,7 @@ public class ServiceAdapter extends BaseAdapter {
             viewHolder.btn_status.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    serviceDAO = new ServiceDAO(context);
+                    serviceDAO = new ServiceDAO(context);
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     builder.setCancelable(true);
                     builder.setTitle("Đổi trạng thái");
@@ -98,12 +102,12 @@ public class ServiceAdapter extends BaseAdapter {
                             new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int j) {
-//                                    if(serviceDAO.UpdateStatusOneService(services.get(i))){
-//                                        Toast.makeText(context, "Thay đổi trạng thái thành công", Toast.LENGTH_SHORT).show();
-//                                        serviceFragment.ReloadListView();
-//                                    }else{
-//                                        Toast.makeText(context, "Thay đổi trạng thái thất bại", Toast.LENGTH_SHORT).show();
-//                                    }
+                                    if(serviceDAO.UpdateStatusOneService(services.get(i))){
+                                        Toast.makeText(context, "Thay đổi trạng thái thành công", Toast.LENGTH_SHORT).show();
+                                        serviceFragment.ReloadListView();
+                                    }else{
+                                        Toast.makeText(context, "Thay đổi trạng thái thất bại", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             });
                     builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
@@ -124,7 +128,7 @@ public class ServiceAdapter extends BaseAdapter {
         viewHolder.l_service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                ((MainActivity)context).replaceFragment(new ServiceDetailFragment(services.get(i)),"Dịch vụ chi tiết");
+                ((MainActivity)context).replaceFragment(new ServiceDetailFragment(services.get(i)),"Dịch vụ chi tiết");
             }
         });
 
