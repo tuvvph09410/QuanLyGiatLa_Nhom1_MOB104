@@ -65,5 +65,10 @@ public class Utilities {
             }
         });
     }
+    public String ChangeDate(String date){
+        String[] array = date.split("-",3);
+        String convertDate = array[2]+"-"+array[1]+"-"+array[0];
+        return convertDate;
+    }
 
 }
