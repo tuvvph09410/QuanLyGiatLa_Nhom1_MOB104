@@ -18,6 +18,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quanlygiatla_nhom1.Class.UserClass;
 import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Personal.PersonalFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Warehouse.WarehouseFragment;
 import com.example.quanlygiatla_nhom1.R;
@@ -79,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < users.size(); i++) {
             userSpinner.add(users.get(i).getUserName());
         }
-//        replaceFragment(new HomeFragment(),"Trang chủ");
+        replaceFragment(new HomeFragment(),"Trang chủ");
     }
 
     private void ToolbarOnClick() {
@@ -107,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 drawerLayout.closeDrawer(GravityCompat.START);
                 switch (item.getItemId()) {
-//                    case R.id.nav_home:
-//                        replaceFragment(new HomeFragment(),"Trang chủ");break;
+                    case R.id.nav_home:
+                        replaceFragment(new HomeFragment(),"Trang chủ");break;
 //
                     case R.id.nav_bill:
                         replaceFragment(new BillFragment(),"Hóa đơn");break;
@@ -125,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
 //                    case R.id.nav_account:
 //                        replaceFragment(new AccountFragment(),"Quản lý tài khoản");break;
 //
-//                    case R.id.nav_personal:
-//                        replaceFragment(new PersonalFragment(),"Thông tin cá nhân");break;
+                    case R.id.nav_personal:
+                        replaceFragment(new PersonalFragment(),"Thông tin cá nhân");break;
 //
 //                    case R.id.nav_change_password:
 //                        replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");break;
