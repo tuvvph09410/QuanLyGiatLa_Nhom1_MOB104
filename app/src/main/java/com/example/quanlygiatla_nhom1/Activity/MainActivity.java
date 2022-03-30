@@ -17,6 +17,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quanlygiatla_nhom1.Class.UserClass;
+import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Warehouse.WarehouseFragment;
 import com.example.quanlygiatla_nhom1.R;
 import com.example.quanlygiatla_nhom1.SQLite.DAO.UserDAO;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -107,15 +110,15 @@ public class MainActivity extends AppCompatActivity {
 //                    case R.id.nav_home:
 //                        replaceFragment(new HomeFragment(),"Trang chủ");break;
 //
-//                    case R.id.nav_bill:
-//                        replaceFragment(new BillFragment(),"Hóa đơn");break;
+                    case R.id.nav_bill:
+                        replaceFragment(new BillFragment(),"Hóa đơn");break;
 //
-//                    case R.id.nav_service:
-//                        replaceFragment(new ServiceFragment(),"Dịch vụ");break;
+                    case R.id.nav_service:
+                        replaceFragment(new ServiceFragment(),"Dịch vụ");break;
 //
-//                    case R.id.nav_warehouse:
-//                        replaceFragment(new WarehouseFragment(),"Kho");break;
-//
+                    case R.id.nav_warehouse:
+                        replaceFragment(new WarehouseFragment(),"Kho");break;
+
 //                    case R.id.nav_profit:
 //                        replaceFragment(new ProfitFragment(),"Doanh thu");break;
 //
