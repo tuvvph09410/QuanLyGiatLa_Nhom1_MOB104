@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.example.quanlygiatla_nhom1.Activity.MainActivity;
 import com.example.quanlygiatla_nhom1.Class.UserClass;
 import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Personal.PersonalFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Warehouse.WarehouseFragment;
 import com.example.quanlygiatla_nhom1.R;
@@ -100,12 +101,12 @@ public class HomeFragment extends Fragment {
     }
 
     private void LayoutAccount() {
-//        l_account.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ((MainActivity)getContext()).replaceFragment(new PersonalFragment(),"Thông tin cá nhân");
-//            }
-//        });
+        l_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getContext()).replaceFragment(new PersonalFragment(),"Thông tin cá nhân");
+            }
+        });
     }
 
     private void LayoutChart() {

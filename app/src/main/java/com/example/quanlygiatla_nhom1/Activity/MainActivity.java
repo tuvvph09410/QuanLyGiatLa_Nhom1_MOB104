@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.quanlygiatla_nhom1.Class.UserClass;
+import com.example.quanlygiatla_nhom1.Fragment.Account.AccountFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
@@ -125,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
 //                    case R.id.nav_profit:
 //                        replaceFragment(new ProfitFragment(),"Doanh thu");break;
 //
-//                    case R.id.nav_account:
-//                        replaceFragment(new AccountFragment(),"Quản lý tài khoản");break;
+                    case R.id.nav_account:
+                        replaceFragment(new AccountFragment(),"Quản lý tài khoản");break;
 //
                     case R.id.nav_personal:
                         replaceFragment(new PersonalFragment(),"Thông tin cá nhân");break;
