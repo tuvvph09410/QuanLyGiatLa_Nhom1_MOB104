@@ -21,7 +21,7 @@
             app:layout_constraintRight_toRightOf="parent"
             android:divider="@color/background"
             android:layout_height="match_parent"
-            android:id="@+id/list_view"/>
+            android:id="@+id/lv_wareHouse"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

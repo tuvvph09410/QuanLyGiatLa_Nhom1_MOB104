@@ -36,17 +36,24 @@ WarehouseFragment warehouseFragment;
 
     @Override
     public int getCount() {
-        return 0;
+        if (this.warehouses == null){
+            return 0;
+        }
+
+        return this.warehouses.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        if (this.warehouses == null){
+            return null;
+        }
+        return this.warehouses.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override

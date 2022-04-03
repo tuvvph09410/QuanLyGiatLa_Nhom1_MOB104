@@ -35,33 +35,40 @@ public class BillAdapter extends BaseAdapter {
     Utilities utils = new Utilities();
 
     public BillAdapter(Context context, List<BillClass> bills, BillFragment billFragment) {
-        this.context =context;
+        this.context = context;
         this.bills = bills;
         this.billFragment = billFragment;
         billDAO = new BillDAO(context);
         billDetailDAO = new BillDetailDAO(context);
     }
+
     @Override
     public int getCount() {
-        return 0;
+        if (this.bills == null) {
+            return 0;
+        }
+        return this.bills.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        if (this.bills == null) {
+            return null;
+        }
+        return this.bills.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-ViewHolder viewHolder=null;
-        if (view==null){
-            viewHolder= new ViewHolder();
-            view = LayoutInflater.from(context).inflate(R.layout.adapter_bill,viewGroup,false);
+        ViewHolder viewHolder = null;
+        if (view == null) {
+            viewHolder = new ViewHolder();
+            view = LayoutInflater.from(context).inflate(R.layout.adapter_bill, viewGroup, false);
             viewHolder.tv_id = view.findViewById(R.id.tv_id);
             viewHolder.tv_date = view.findViewById(R.id.tv_date);
             viewHolder.tv_user_name = view.findViewById(R.id.tv_user_name);
@@ -75,7 +82,7 @@ ViewHolder viewHolder=null;
             viewHolder.l_bill = view.findViewById(R.id.l_bill);
             viewHolder.tv_total = view.findViewById(R.id.tv_total);
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
@@ -83,18 +90,18 @@ ViewHolder viewHolder=null;
         List<String> serviceID = billDetailDAO.GetAllServiceBill(bills.get(i).getId().trim());
         List<String> uniqueWarehouseID = new ArrayList<>();
         List<String> uniqueServiceID = new ArrayList<>();
-        for (String w: warehouseID) {
+        for (String w : warehouseID) {
             if (!uniqueWarehouseID.contains(w)) {
                 uniqueWarehouseID.add(w);
             }
         }
-        for (String s: serviceID) {
+        for (String s : serviceID) {
             if (!uniqueServiceID.contains(s)) {
                 uniqueServiceID.add(s);
             }
         }
 
-        String total = ""+billDetailDAO.GetBillTotal(bills.get(i).getId());
+        String total = "" + billDetailDAO.GetBillTotal(bills.get(i).getId());
 
         viewHolder.tv_id.setText(bills.get(i).getId());
         viewHolder.tv_date.setText(utils.ChangeDate(bills.get(i).getDate()));
@@ -104,7 +111,7 @@ ViewHolder viewHolder=null;
         viewHolder.tv_service_id.setText(uniqueServiceID.toString());
         viewHolder.tv_warehouse_id.setText(uniqueWarehouseID.toString());
         viewHolder.tv_status.setText(bills.get(i).getStatus());
-        viewHolder.tv_delete.setText(bills.get(i).getDelete().equalsIgnoreCase("Đã xóa")?"Đã xóa":"");
+        viewHolder.tv_delete.setText(bills.get(i).getDelete().equalsIgnoreCase("Đã xóa") ? "Đã xóa" : "");
         viewHolder.tv_total.setText(total);
 
         viewHolder.btn_status.setOnClickListener(new View.OnClickListener() {
@@ -113,15 +120,15 @@ ViewHolder viewHolder=null;
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setCancelable(true);
                 builder.setTitle("Đổi trạng thái");
-                builder.setMessage("Bạn xác định rằng sẽ đổi từ trạng thái "+bills.get(i).getStatus()+" sang trạng thái tiếp theo?");
+                builder.setMessage("Bạn xác định rằng sẽ đổi từ trạng thái " + bills.get(i).getStatus() + " sang trạng thái tiếp theo?");
                 builder.setPositiveButton("Xác nhận",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int j) {
-                                if(billDAO.UpdateStatusOneBill(bills.get(i))){
+                                if (billDAO.UpdateStatusOneBill(bills.get(i))) {
                                     Toast.makeText(context, "Đổi trạng thái thành công", Toast.LENGTH_SHORT).show();
                                     billFragment.ReloadListView();
-                                } else{
+                                } else {
                                     Toast.makeText(context, "Đổi trạng thái thất bại", Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -140,7 +147,7 @@ ViewHolder viewHolder=null;
         viewHolder.l_bill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)context).replaceFragment(new BillDetailFragment(bills.get(i),total),"Chi tiết hóa đơn");
+                ((MainActivity) context).replaceFragment(new BillDetailFragment(bills.get(i), total), "Chi tiết hóa đơn");
             }
         });
 
@@ -148,8 +155,9 @@ ViewHolder viewHolder=null;
 
 
     }
-    private class ViewHolder{
-        TextView tv_id,tv_date,tv_user_name,tv_customer_name,tv_phone,tv_status,tv_service_id,tv_warehouse_id,tv_delete,tv_total;
+
+    private class ViewHolder {
+        TextView tv_id, tv_date, tv_user_name, tv_customer_name, tv_phone, tv_status, tv_service_id, tv_warehouse_id, tv_delete, tv_total;
         Button btn_status;
         ConstraintLayout l_bill;
     }

@@ -3,6 +3,7 @@ package com.example.quanlygiatla_nhom1.Fragment.Personal;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,9 @@ public class PersonalFragment extends Fragment {
         btn_edit = view.findViewById(R.id.btn_edit);
 
         Init();
+
         EditOnClick();
+
         RemoveErrorTextOnChange();
 
         return view;
@@ -77,7 +80,8 @@ public class PersonalFragment extends Fragment {
     private void Init() {
         utils = new Utilities();
         sharedPreferences = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        UserName = sharedPreferences.getString("UserName","");
+        UserName = sharedPreferences.getString("Username","");
+        Log.e("username",UserName);
         MapUser();
     }
 

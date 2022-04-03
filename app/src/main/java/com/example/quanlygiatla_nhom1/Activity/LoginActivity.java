@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         this.sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
         if (this.userDAO.GetAllNotDeleteUser().size() == 0) {
             UserClass userClass = new UserClass(
-                    "Vũ Văn Tú",
+                    "Nhóm 1",
                     "0878571999",
                     "admin",
                     "admin",

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -19,7 +20,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.quanlygiatla_nhom1.Class.UserClass;
 import com.example.quanlygiatla_nhom1.Fragment.Account.AccountFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
-import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Personal.PersonalFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void actionBar() {
         this.actionBar = getSupportActionBar();
-        if (this.actionBar != null){
+        if (this.actionBar != null) {
             this.actionBar.hide();
         }
     }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < users.size(); i++) {
             userSpinner.add(users.get(i).getUserName());
         }
-        replaceFragment(new HomeFragment(),"Trang chủ");
+        replaceFragment(new HomeFragment(), "Trang chủ");
     }
 
     private void ToolbarOnClick() {
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = this.getSharedPreferences("user", Context.MODE_PRIVATE);
         String role = sharedPreferences.getString("Role", "");
+        Log.e("role", role);
 
         if (role.equalsIgnoreCase("User")) {
             navigationView.getMenu().findItem(R.id.nav_profit).setVisible(false);
@@ -112,25 +113,31 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.closeDrawer(GravityCompat.START);
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        replaceFragment(new HomeFragment(),"Trang chủ");break;
+                        replaceFragment(new HomeFragment(), "Trang chủ");
+                        break;
 //
                     case R.id.nav_bill:
-                        replaceFragment(new BillFragment(),"Hóa đơn");break;
+                        replaceFragment(new BillFragment(), "Hóa đơn");
+                        break;
 //
                     case R.id.nav_service:
-                        replaceFragment(new ServiceFragment(),"Dịch vụ");break;
+                        replaceFragment(new ServiceFragment(), "Dịch vụ");
+                        break;
 //
                     case R.id.nav_warehouse:
-                        replaceFragment(new WarehouseFragment(),"Kho");break;
+                        replaceFragment(new WarehouseFragment(), "Kho");
+                        break;
 
 //                    case R.id.nav_profit:
 //                        replaceFragment(new ProfitFragment(),"Doanh thu");break;
 //
                     case R.id.nav_account:
-                        replaceFragment(new AccountFragment(),"Quản lý tài khoản");break;
+                        replaceFragment(new AccountFragment(), "Quản lý tài khoản");
+                        break;
 //
                     case R.id.nav_personal:
-                        replaceFragment(new PersonalFragment(),"Thông tin cá nhân");break;
+                        replaceFragment(new PersonalFragment(), "Thông tin cá nhân");
+                        break;
 //
 //                    case R.id.nav_change_password:
 //                        replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");break;

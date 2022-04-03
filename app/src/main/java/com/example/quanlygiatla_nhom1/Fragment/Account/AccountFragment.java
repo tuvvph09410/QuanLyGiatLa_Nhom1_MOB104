@@ -23,7 +23,7 @@ public class AccountFragment  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account, container, false);
-        listView = view.findViewById(R.id.list_view);
+        listView = view.findViewById(R.id.lv_wareHouse);
 
         Init();
         MapListView();

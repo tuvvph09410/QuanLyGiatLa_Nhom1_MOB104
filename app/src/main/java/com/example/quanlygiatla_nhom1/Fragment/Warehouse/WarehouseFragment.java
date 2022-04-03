@@ -42,8 +42,8 @@ public class WarehouseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-View view=inflater.inflate(R.layout.fragment_warehouse,container,false);
-        listView = view.findViewById(R.id.list_view);
+        View view=inflater.inflate(R.layout.fragment_warehouse,container,false);
+        listView = view.findViewById(R.id.lv_wareHouse);
         fab_add = view.findViewById(R.id.fab_add);
         search = view.findViewById(R.id.search);
         Init();
@@ -73,10 +73,6 @@ View view=inflater.inflate(R.layout.fragment_warehouse,container,false);
             }
         });
     }
-
-    //    *************************
-    //    *    End Create View    *
-    //    *************************
 
     private void Init(){
         utils = new Utilities();

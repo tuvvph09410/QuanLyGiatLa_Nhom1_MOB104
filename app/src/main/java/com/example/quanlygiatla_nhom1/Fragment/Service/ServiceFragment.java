@@ -45,7 +45,7 @@ public class ServiceFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_service, container, false);
 
-        listView = view.findViewById(R.id.list_view);
+        listView = view.findViewById(R.id.lv_wareHouse);
         fab_add = view.findViewById(R.id.fab_add);
         search = view.findViewById(R.id.search);
 
