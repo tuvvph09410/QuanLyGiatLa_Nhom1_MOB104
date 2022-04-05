@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.quanlygiatla_nhom1.Class.UserClass;
 import com.example.quanlygiatla_nhom1.Fragment.Account.AccountFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
+import com.example.quanlygiatla_nhom1.Fragment.ChangePassword.ChangePasswordFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Personal.PersonalFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
@@ -139,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
                         replaceFragment(new PersonalFragment(), "Thông tin cá nhân");
                         break;
 //
-//                    case R.id.nav_change_password:
-//                        replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");break;
+                    case R.id.nav_change_password:
+                        replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");break;
 //
 //                    case R.id.nav_reset_password:
 //                        replaceFragment(new ResetPasswordFragment(userSpinner),"Đặt lại mật khẩu");break;
