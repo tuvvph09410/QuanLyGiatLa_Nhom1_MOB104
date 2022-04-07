@@ -97,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void NavigationSelect() {
-
         sharedPreferences = this.getSharedPreferences("user", Context.MODE_PRIVATE);
         String role = sharedPreferences.getString("Role", "");
         Log.e("role", role);
@@ -141,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
 //
                     case R.id.nav_change_password:
-                        replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");break;
+                        replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");
+                        break;
 //
 //                    case R.id.nav_reset_password:
 //                        replaceFragment(new ResetPasswordFragment(userSpinner),"Đặt lại mật khẩu");break;

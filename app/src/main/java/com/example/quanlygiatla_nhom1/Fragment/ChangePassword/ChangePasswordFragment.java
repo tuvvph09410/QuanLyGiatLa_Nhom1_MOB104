@@ -53,7 +53,7 @@ public class ChangePasswordFragment extends Fragment {
         utils = new Utilities();
         userDAO = new UserDAO(getContext());
         sharedPreferences = getContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        UserName = sharedPreferences.getString("UserName", "");
+        UserName = sharedPreferences.getString("Username", "");
         tv_user_name.setText(UserName);
     }
 
