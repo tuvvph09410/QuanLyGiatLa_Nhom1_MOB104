@@ -25,5 +25,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14dp"
-        android:text="Khối 6 thị trấn Tân Kỳ, huyện Tân Kỳ" />
+        android:text="Cao đẳng FPT Polytechnic" />
 </LinearLayout>
