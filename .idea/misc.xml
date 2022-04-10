@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/activity_main.xml" value="0.25395033860045146" />
+        <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/adapter_account.xml" value="0.11775362318840579" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/adapter_service.xml" value="0.17074275362318841" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/adapter_warehouse.xml" value="0.17074275362318841" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/dialog_add_bill.xml" value="0.17074275362318841" />
-        <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_change_password.xml" value="0.11775362318840579" />
+        <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_change_password.xml" value="0.22" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_home.xml" value="0.234375" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_personal.xml" value="0.17074275362318841" />
+        <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_reset_password.xml" value="0.25" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_service_detail.xml" value="0.17074275362318841" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/fragment_warehouse.xml" value="0.17074275362318841" />
         <entry key="..\:/QuanLyGiatLa_Nhom1_MOB104/app/src/main/res/layout/nav_header_main.xml" value="0.234375" />

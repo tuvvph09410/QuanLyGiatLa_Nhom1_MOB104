@@ -23,6 +23,8 @@ import com.example.quanlygiatla_nhom1.Fragment.Bill.BillFragment;
 import com.example.quanlygiatla_nhom1.Fragment.ChangePassword.ChangePasswordFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Home.HomeFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Personal.PersonalFragment;
+import com.example.quanlygiatla_nhom1.Fragment.Profit.ProfitFragment;
+import com.example.quanlygiatla_nhom1.Fragment.ResetPassword.ResetPasswordFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Service.ServiceFragment;
 import com.example.quanlygiatla_nhom1.Fragment.Warehouse.WarehouseFragment;
 import com.example.quanlygiatla_nhom1.R;
@@ -115,36 +117,36 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         replaceFragment(new HomeFragment(), "Trang chủ");
                         break;
-//
+
                     case R.id.nav_bill:
                         replaceFragment(new BillFragment(), "Hóa đơn");
                         break;
-//
+
                     case R.id.nav_service:
                         replaceFragment(new ServiceFragment(), "Dịch vụ");
                         break;
-//
+
                     case R.id.nav_warehouse:
                         replaceFragment(new WarehouseFragment(), "Kho");
                         break;
 
-//                    case R.id.nav_profit:
-//                        replaceFragment(new ProfitFragment(),"Doanh thu");break;
-//
+                    case R.id.nav_profit:
+                        replaceFragment(new ProfitFragment(),"Doanh thu");break;
+
                     case R.id.nav_account:
                         replaceFragment(new AccountFragment(), "Quản lý tài khoản");
                         break;
-//
+
                     case R.id.nav_personal:
                         replaceFragment(new PersonalFragment(), "Thông tin cá nhân");
                         break;
-//
+
                     case R.id.nav_change_password:
                         replaceFragment(new ChangePasswordFragment(),"Đổi mật khẩu");
                         break;
-//
-//                    case R.id.nav_reset_password:
-//                        replaceFragment(new ResetPasswordFragment(userSpinner),"Đặt lại mật khẩu");break;
+
+                    case R.id.nav_reset_password:
+                        replaceFragment(new ResetPasswordFragment(userSpinner),"Đặt lại mật khẩu");break;
 
                     case R.id.nav_logout: {
                         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
