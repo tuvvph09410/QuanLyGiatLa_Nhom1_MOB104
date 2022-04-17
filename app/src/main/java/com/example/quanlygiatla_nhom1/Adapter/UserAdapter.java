@@ -26,12 +26,12 @@ public class UserAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-        return 0;
+        return users.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return users.get(i);
     }
 
     @Override
